@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace FirstXamarinApp.Models
+namespace Models
 {
     public abstract class ObservableObject : INotifyPropertyChanged
     {

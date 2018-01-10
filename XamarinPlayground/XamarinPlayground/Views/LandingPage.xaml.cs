@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommonServiceLocator;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +7,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinPlayground.Services;
 using XamarinPlayground.ViewModels;
 
 namespace XamarinPlayground.Views
@@ -16,7 +18,7 @@ namespace XamarinPlayground.Views
 		public LandingPage ()
 		{
 			InitializeComponent ();
-            BindingContext = new LandingViewModel();
+            BindingContext = new LandingViewModel(ServiceLocator.Current.GetInstance<IEmployeeService>());
 		}
 	}
 }

@@ -15,6 +15,7 @@ namespace XamarinPlayground
 
             //MainPage = new XamarinPlayground.MainPage();
             MainPage = new Views.LandingPage();
+
 		}
 
 		protected override void OnStart ()

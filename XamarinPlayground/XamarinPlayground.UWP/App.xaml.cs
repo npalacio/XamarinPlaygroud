@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autofac;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,6 +15,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using XamarinPlayground.Utilities;
+using XamarinPlayground.UWP.Utilities;
 
 namespace XamarinPlayground.UWP
 {
@@ -30,8 +33,14 @@ namespace XamarinPlayground.UWP
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            RegisterServices();
         }
 
+        private static void RegisterServices() {
+            var builder = new ContainerBuilder();
+            builder.RegisterModule<UWPModule>();
+            ViewModelLocator.RegisterServices(builder);
+        }
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
         /// will be used such as when the application is launched to open a specific file.
