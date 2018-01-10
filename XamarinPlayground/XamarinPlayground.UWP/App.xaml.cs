@@ -40,6 +40,12 @@ namespace XamarinPlayground.UWP
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
 
+#if DEBUG
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                this.DebugSettings.EnableFrameRateCounter = false;
+            }
+#endif
 
             Frame rootFrame = Window.Current.Content as Frame;
 

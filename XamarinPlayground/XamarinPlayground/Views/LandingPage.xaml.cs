@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinPlayground.ViewModels;
 
 namespace XamarinPlayground.Views
 {
@@ -15,6 +16,7 @@ namespace XamarinPlayground.Views
 		public LandingPage ()
 		{
 			InitializeComponent ();
+            BindingContext = new LandingViewModel();
 		}
 	}
 }
