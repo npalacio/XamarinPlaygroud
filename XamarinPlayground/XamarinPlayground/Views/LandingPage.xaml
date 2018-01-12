@@ -4,15 +4,8 @@
              x:Class="XamarinPlayground.Views.LandingPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="This is the landing page"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Label Text="{Binding TestVar}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Label Text="{Binding Employee.Name}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="{Binding Employee.Name}" VerticalOptions="Start" HorizontalOptions="Center" />
+            <Button Text="Test command" Command="{Binding TestCommand}" HorizontalOptions="Center"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

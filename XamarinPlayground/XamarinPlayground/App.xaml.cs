@@ -14,7 +14,7 @@ namespace XamarinPlayground
 			InitializeComponent();
 
             //MainPage = new XamarinPlayground.MainPage();
-            MainPage = new Views.LandingPage();
+            MainPage = new NavigationPage(new Views.LandingPage());
 
 		}
 
