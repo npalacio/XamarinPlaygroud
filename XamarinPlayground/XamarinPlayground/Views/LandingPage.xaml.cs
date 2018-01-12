@@ -18,7 +18,7 @@ namespace XamarinPlayground.Views
 		public LandingPage ()
 		{
 			InitializeComponent ();
-            BindingContext = new LandingViewModel(ServiceLocator.Current.GetInstance<IEmployeeService>());
+            BindingContext = new LandingViewModel(ServiceLocator.Current.GetInstance<IEmployeeService>(), Navigation);
 		}
 	}
 }
