@@ -12,24 +12,26 @@ namespace XamarinPlayground.ViewModels
 {
     class LandingViewModel : ObservableObject
     {
-        public string TestVar { get; private set; }
-        public IEmployeeService EmployeeService { get; private set; }
-        public Employee Employee { get; private set; }
-        public ICommand TestCommand { get; private set; }
+//        public string TestVar { get; private set; }
+//        public IEmployeeService EmployeeService { get; private set; }
+//        public Employee Employee { get; private set; }
+        public ICommand SearchCommand { get; private set; }
         public INavigation Navigation { get; private set; }
+        public string SearchText { get; private set; }
 
         public LandingViewModel(IEmployeeService employeeService, INavigation navigation)
+//        public LandingViewModel(INavigation navigation)
         {
 //            this.TestVar = "test var working";
-            EmployeeService = employeeService;
-            Employee = EmployeeService.GetEmployees()[0];
-            TestCommand = new Command(async () => await ChangeEmployee());
+//            EmployeeService = employeeService;
+//            Employee = EmployeeService.GetEmployees()[0];
+            SearchCommand = new Command((searchText) => ChangeEmployee((string) searchText));
             Navigation = navigation;
         }
 
-        async Task ChangeEmployee()
+        void ChangeEmployee(string text)
         {
-            await Navigation.PushAsync(new EmployeeListPage());
+            Navigation.PushAsync(new EmployeeListPage()).Wait();
 //            Employee = new Employee()
 //            {
 //                Name = "Employee from command"

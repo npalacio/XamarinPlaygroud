@@ -4,7 +4,8 @@
              x:Class="XamarinPlayground.Views.EmployeeListPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="This is the employee list page" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            <Label Text="This is the employee list page" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+            <Label Text="{Binding TestVar}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
