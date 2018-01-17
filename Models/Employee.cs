@@ -15,5 +15,10 @@ namespace Models
                     OnPropertyChanged("Name");
                 }
             } }
+
+        public override bool Equals(object obj)
+        {
+            return obj != null && ((Employee)obj).Name == Name;
+        }
     }
 }

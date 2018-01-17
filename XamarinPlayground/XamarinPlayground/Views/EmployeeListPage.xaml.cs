@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using CommonServiceLocator;
+using Models.ViewModelParameters;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinPlayground.Services;
 using XamarinPlayground.ViewModels;
 
 namespace XamarinPlayground.Views
@@ -13,10 +10,10 @@ namespace XamarinPlayground.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class EmployeeListPage : ContentPage
 	{
-		public EmployeeListPage ()
+		public EmployeeListPage (EmployeeListParams parameters)
 		{
 			InitializeComponent ();
-		    BindingContext = new EmployeeListViewModel();
+		    BindingContext = new EmployeeListViewModel(parameters, ServiceLocator.Current.GetInstance<IEmployeeService>());
 		}
 	}
 }

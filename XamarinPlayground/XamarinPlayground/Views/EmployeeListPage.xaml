@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinPlayground.Views.EmployeeListPage">
@@ -6,6 +7,17 @@
         <StackLayout>
             <Label Text="This is the employee list page" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
             <Label Text="{Binding TestVar}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+            <Label Text="{Binding SearchText}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+            <ListView ItemsSource="{Binding Employees}"
+                      SelectedItem="{Binding SelectedEmployee, Mode=TwoWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <Label Text="{Binding Name}" HorizontalTextAlignment="Center" HorizontalOptions="Center" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

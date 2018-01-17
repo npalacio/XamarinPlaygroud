@@ -7,6 +7,6 @@ namespace XamarinPlayground.Services
 {
     public interface IEmployeeService
     {
-        List<Employee> GetEmployees();
+        IEnumerable<Employee> GetEmployees();
     }
 }

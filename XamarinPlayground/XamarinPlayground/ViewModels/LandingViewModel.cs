@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Models.ViewModelParameters;
 using Xamarin.Forms;
 using XamarinPlayground.Services;
 using XamarinPlayground.Views;
@@ -31,7 +32,11 @@ namespace XamarinPlayground.ViewModels
 
         void ChangeEmployee(string text)
         {
-            Navigation.PushAsync(new EmployeeListPage()).Wait();
+            var empListParams = new EmployeeListParams()
+            {
+                SearchText = text
+            };
+            Navigation.PushAsync(new EmployeeListPage(empListParams)).Wait();
 //            Employee = new Employee()
 //            {
 //                Name = "Employee from command"
