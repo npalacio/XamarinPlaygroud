@@ -4,12 +4,7 @@
              x:Class="XamarinPlayground.Views.LandingPage">
     <ContentPage.Content>
         <StackLayout>
-<!--            <Label Text="{Binding Employee.Name}" VerticalOptions="Start" HorizontalOptions="Center" />-->
-<!--            <Button Text="Test command" Command="{Binding TestCommand}" HorizontalOptions="Center"></Button>-->
-            <Label Text="{Binding Title}"></Label>
-            <SearchBar x:Name="search" Placeholder="Search for Employee..." 
-                       SearchCommand="{Binding SearchCommand}"
-                       SearchCommandParameter="{Binding Text, Source={x:Reference search}}"></SearchBar>
+            <Button Text="{Binding SearchBtnText}" Command="{Binding GoToSearch}"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

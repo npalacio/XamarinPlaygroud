@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Models;
 using Models.ViewModelParameters;
-using Xamarin.Forms;
 using XamarinPlayground.Services;
 
 namespace XamarinPlayground.ViewModels
