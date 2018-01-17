@@ -3,11 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinPlayground.Views.EmployeeSearchPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="{Binding Title}"></Label>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Text="{Binding Title}"
+                   Grid.Row="1"
+                   Grid.Column="1">
+            </Label>
             <SearchBar x:Name="search" Placeholder="Search for Employee..." 
                        SearchCommand="{Binding SearchCommand}"
-                       SearchCommandParameter="{Binding Text, Source={x:Reference search}}"></SearchBar>
-        </StackLayout>
+                       SearchCommandParameter="{Binding Text, Source={x:Reference search}}"
+                       Grid.Row="2"
+                       Grid.Column="1">
+            </SearchBar>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
