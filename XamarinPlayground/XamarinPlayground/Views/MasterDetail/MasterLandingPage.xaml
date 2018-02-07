@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinPlayground.Views.MasterDetail.MasterLandingPage"
+             xmlns:pages="clr-namespace:XamarinPlayground.Views"
+             xmlns:masterDetail="clr-namespace:XamarinPlayground.Views.MasterDetail">
+  <MasterDetailPage.Master>
+    <masterDetail:DetailItemsPage></masterDetail:DetailItemsPage>
+  </MasterDetailPage.Master>
+  <MasterDetailPage.Detail>
+    <NavigationPage>
+      <x:Arguments>
+        <pages:LandingPage />
+      </x:Arguments>
+    </NavigationPage>
+  </MasterDetailPage.Detail>
+</MasterDetailPage>

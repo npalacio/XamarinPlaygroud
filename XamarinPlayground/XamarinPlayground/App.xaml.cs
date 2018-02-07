@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
+using XamarinPlayground.Views.MasterDetail;
 
 namespace XamarinPlayground
 {
@@ -13,8 +14,8 @@ namespace XamarinPlayground
 		{
 			InitializeComponent();
 
-            //MainPage = new XamarinPlayground.MainPage();
-            MainPage = new NavigationPage(new Views.LandingPage());
+//            MainPage = new NavigationPage(new Views.LandingPage());
+            MainPage = new NavigationPage(new MasterLandingPage());
 
 		}
 
