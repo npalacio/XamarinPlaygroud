@@ -8,7 +8,7 @@
             <Label Text="This is the employee list page" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
             <Label Text="{Binding TestVar}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
             <Label Text="{Binding SearchText}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
-            <ListView ItemsSource="{Binding Employees}"
+            <ListView ItemsSource="{Binding FilteredEmployees}"
                       SelectedItem="{Binding SelectedEmployee, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>

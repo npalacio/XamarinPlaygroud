@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Models;
 using Models.ViewModelParameters;
 using XamarinPlayground.Services;
@@ -11,6 +13,7 @@ namespace XamarinPlayground.ViewModels
         public string SearchText { get; private set; }
         public IEmployeeService EmployeeService { get; private set; }
         public IEnumerable<Employee> Employees { get; private set; }
+        public IEnumerable<Employee> FilteredEmployees { get; private set; }
 
         private Employee _selectedEmployee;
         public Employee SelectedEmployee
@@ -31,6 +34,14 @@ namespace XamarinPlayground.ViewModels
             SearchText = parameters.SearchText;
             EmployeeService = empService;
             Employees = EmployeeService.GetEmployees();
+            FilterEmployees();
+        }
+
+        private void FilterEmployees()
+        {
+            FilteredEmployees = SearchText != null ? 
+                Employees.Where(emp => emp.Name.IndexOf(SearchText, 0, StringComparison.CurrentCultureIgnoreCase) > -1) 
+                : Employees;
         }
     }
 }

@@ -22,7 +22,7 @@ namespace XamarinPlayground.ViewModels
             Title = "Employee Search Page";
 //            EmployeeService = empService;
             Navigation = nav;
-            SearchCommand = new Command((searchText) => ChangeEmployee((string) searchText));
+            SearchCommand = new Command(searchText => ChangeEmployee((string) searchText));
         }
         void ChangeEmployee(string text)
         {
